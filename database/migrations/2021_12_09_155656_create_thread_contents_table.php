@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateThreadsTable extends Migration
+class CreateThreadContentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateThreadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('threads', function (Blueprint $table) {
-            $table->bigIncrements('thread_id');
-            $table->string('name',30)->default('名無し様');
+        Schema::create('thread_contents', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->text('body');
             $table->timestamps();
-
         });
     }
 
@@ -29,6 +27,6 @@ class CreateThreadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('threads');
+        Schema::dropIfExists('thread_contents');
     }
 }
