@@ -29,7 +29,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('header-component', HeaderComponent);
 
 Vue.use(VueRouter);
- 
+
 const router = new VueRouter({
     mode: 'history',
     routes: [
