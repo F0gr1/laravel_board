@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ThreadContent extends Model
+class Response extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'body',
+        'name','message'
     ];
 }
