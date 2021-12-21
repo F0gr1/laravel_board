@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(TasksTableSeeder::class);
-        $this->call(ThreadsTableSeeder::class);
-        $this->call(ThreadContentsSeeder::class);
+        $this->call(ThreadsSeeder::class);
+        $this->call(ResponsesSeeder::class);
     }
 }

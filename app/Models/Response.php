@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Response extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
+    
     protected $fillable = [
-        'name','message'
+        'name',
+        'thread_id',
+        'message',
+        'posted_at',
+        'ip_addr',
     ];
 }
