@@ -9,6 +9,6 @@ class Thread extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
+        'title',
     ];
 }
