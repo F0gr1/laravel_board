@@ -17,12 +17,12 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-             </div>
-         </div>
-     </div>
- </template>
- 
- <script>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
     export default {
         data: function () {
             return {
@@ -38,4 +38,4 @@
             }
         }
     }
- </script>
+</script>
