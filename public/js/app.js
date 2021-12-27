@@ -5619,6 +5619,18 @@ __webpack_require__.r(__webpack_exports__);
     return {
       threads: []
     };
+  },
+  methods: {
+    getThread: function getThread() {
+      var _this = this;
+
+      axios.get('/api/thread_index').then(function (res) {
+        _this.threads = res.data;
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getThread();
   }
 });
 
@@ -29428,7 +29440,7 @@ var render = function() {
     _c(
       "tbody",
       _vm._l(_vm.threads, function(thread) {
-        return _c("tr", { key: thread.number }, [
+        return _c("tr", { key: thread.id }, [
           _c("td", [_vm._v(_vm._s(thread.id))]),
           _vm._v(" "),
           _c("td", [_vm._v(_vm._s(thread.title))]),
@@ -29451,7 +29463,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("スレッド番号")]),
+        _c("th", [_vm._v("スレッドID")]),
         _vm._v(" "),
         _c("th", [_vm._v("タイトル")]),
         _vm._v(" "),

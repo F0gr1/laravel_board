@@ -2,7 +2,7 @@
     <table>
         <thead>
             <tr>
-                <th>スレッド番号</th>
+                <th>スレッドID</th>
                 <th>タイトル</th>
                 <th>作成日時</th>
                 <th>更新日時</th>
@@ -10,7 +10,7 @@
             </tr> 
         </thead>
         <tbody>
-            <tr v-for="thread  in threads" v-bind:key="thread.number">
+            <tr v-for="thread in threads" v-bind:key="thread.id">
                 <td>{{thread.id}}</td>
                 <td>{{thread.title}}</td>
                 <td>{{thread.created_at}}</td>
@@ -24,13 +24,24 @@
 </template>
 
 <script>
-export default {
-    data:function(){
-        return {
-            threads:[]
+    export default {
+        data:function(){
+            return {
+                threads:[]
+            }
+        },
+        methods: {
+            getThread() {
+                axios.get('/api/thread_index')
+                    .then((res) => {
+                        this.threads = res.data;
+                    });
+            },
+        },
+        mounted() {
+            this.getThread();
         }
     }
-}
 </script>
 
 <style>
