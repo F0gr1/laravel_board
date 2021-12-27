@@ -1,0 +1,38 @@
+<template>
+    <table>
+        <thead>
+            <tr>
+                <th>スレッド番号</th>
+                <th>タイトル</th>
+                <th>作成日時</th>
+                <th>更新日時</th>
+                <th>削除</th>
+            </tr> 
+        </thead>
+        <tbody>
+            <tr v-for="thread  in threads" v-bind:key="thread.number">
+                <td>{{thread.id}}</td>
+                <td>{{thread.title}}</td>
+                <td>{{thread.created_at}}</td>
+                <td>{{thread.updated_at}}</td>
+                <td>
+                    <button >削除</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</template>
+
+<script>
+export default {
+    data:function(){
+        return {
+            threads:[]
+        }
+    }
+}
+</script>
+
+<style>
+
+</style>
