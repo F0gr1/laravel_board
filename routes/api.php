@@ -22,3 +22,7 @@ Route::post('/tasks', 'App\Http\Controllers\TaskController@store');
 Route::get('/tasks/{task}', 'App\Http\Controllers\TaskController@show');
 Route::put('/tasks/{task}', 'App\Http\Controllers\TaskController@update');
 Route::delete('/tasks/{task}', 'App\Http\Controllers\TaskController@destroy');
+
+use App\Http\Controllers\API\ResponseController;
+Route::get('/threads/{thread_id}', [ResponseController::class, 'index']);
+Route::post('/threads/{thread_id}', [ResponseController::class, 'store']);
