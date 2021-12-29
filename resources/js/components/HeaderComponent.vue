@@ -10,12 +10,15 @@
                     <router-link v-bind:to="{name: 'task.create'}">
                         <button class="btn btn-success">ADD</button>
                     </router-link>
+                    <router-link v-bind:to="{name:'thread.index'}">
+                        <button class="btn btn-success">thread</button>
+                    </router-link >
                 </div>
             </nav>
         </div>
     </div>
 </template>
- 
+
 <script>
     export default {}
 </script>

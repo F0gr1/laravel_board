@@ -14,7 +14,7 @@ class ThreadsSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 5; $i++) {
             Thread::create([
                 'title' => 'title'. $i,
             ]);
