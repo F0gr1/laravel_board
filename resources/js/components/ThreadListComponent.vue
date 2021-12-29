@@ -16,7 +16,7 @@
                 <td>{{thread.created_at}}</td>
                 <td>{{thread.updated_at}}</td>
                 <td>
-                    <button v-on:click="DeleteThread(thread.id)">削除</button>
+                    <button >削除</button>
                 </td>
             </tr>
         </tbody>
@@ -37,12 +37,6 @@
                         this.threads = res.data;
                     });
             },
-            DeleteThread(id) {
-                axios.delete('api/thread_index/' + id)
-                .then((res) => {
-                        this.getThread()
-                    });
-            }
         },
         mounted() {
             this.getThread();

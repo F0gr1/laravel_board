@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Thread;
-use Illuminate\Support\Facades\DB;
 class ThreadController extends Controller
 {
     /*
@@ -59,12 +58,6 @@ class ThreadController extends Controller
      */
     public function destroy($id)
     {
-        DB::beginTransaction();
-        try{
-            Thread::destroy($id);
-            DB::commit();
-        }catch(Exception $e){
-            DB::rollback();
-        }
+        //
     }
 }
