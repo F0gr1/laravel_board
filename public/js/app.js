@@ -2429,13 +2429,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2453,7 +2446,7 @@ __webpack_require__.r(__webpack_exports__);
     DeleteThread: function DeleteThread(id) {
       var _this2 = this;
 
-      axios["delete"]('api/thread_index/' + id).then(function (res) {
+      axios["delete"]('/api/thread_index/' + id).then(function (res) {
         _this2.getThread();
       });
     }
@@ -39201,59 +39194,47 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("table", [
-    _vm._m(0),
-    _vm._v(" "),
     _c(
-      "tbody",
+      "div",
+      { staticClass: "row col-md-12" },
       _vm._l(_vm.threads, function(thread) {
-        return _c("tr", { key: thread.id }, [
-          _c("td", [_vm._v(_vm._s(thread.id))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(thread.title))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(thread.created_at))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(thread.updated_at))]),
-          _vm._v(" "),
-          _c("td", [
-            _c(
-              "button",
-              {
-                on: {
-                  click: function($event) {
-                    return _vm.DeleteThread(thread.id)
-                  }
-                }
-              },
-              [_vm._v("削除")]
-            )
-          ])
-        ])
+        return _c(
+          "div",
+          { key: thread.id, staticClass: "card col-md-6 text-center" },
+          [
+            _c("div", { staticClass: "card-header" }, [
+              _vm._v(
+                "\n                 " + _vm._s(thread.title) + "\n            "
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("blockquote", { staticClass: "blockquote mb-0" }, [
+                _c("footer", { staticClass: "blockquote-footer" }, [
+                  _vm._v(_vm._s(thread.created_at))
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.DeleteThread(thread.id)
+                      }
+                    }
+                  },
+                  [_vm._v("削除")]
+                )
+              ])
+            ])
+          ]
+        )
       }),
       0
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("スレッドID")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("タイトル")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("作成日時")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("更新日時")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("削除")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

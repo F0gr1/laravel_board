@@ -1,25 +1,18 @@
 <template>
     <table>
-        <thead>
-            <tr>
-                <th>スレッドID</th>
-                <th>タイトル</th>
-                <th>作成日時</th>
-                <th>更新日時</th>
-                <th>削除</th>
-            </tr> 
-        </thead>
-        <tbody>
-            <tr v-for="thread in threads" v-bind:key="thread.id">
-                <td>{{thread.id}}</td>
-                <td>{{thread.title}}</td>
-                <td>{{thread.created_at}}</td>
-                <td>{{thread.updated_at}}</td>
-                <td>
+        <div class='row col-md-12'>
+            <div class="card col-md-6 text-center" v-for="thread in threads" v-bind:key="thread.id">
+                <div class="card-header">
+                     {{thread.title}}
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                    <footer class="blockquote-footer">{{thread.created_at}}</footer>
                     <button v-on:click="DeleteThread(thread.id)">削除</button>
-                </td>
-            </tr>
-        </tbody>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
     </table>
 </template>
 
@@ -38,7 +31,7 @@
                     });
             },
             DeleteThread(id) {
-                axios.delete('api/thread_index/' + id)
+                axios.delete('/api/thread_index/' + id)
                 .then((res) => {
                         this.getThread()
                     });
