@@ -3,7 +3,7 @@
         <div class='row col-md-12'>
             <div class="card col-md-6 text-center" v-for="thread in threads" v-bind:key="thread.id">
                 <div class="card-header">
-                     {{thread.title}}
+                    {{thread.title}}
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">

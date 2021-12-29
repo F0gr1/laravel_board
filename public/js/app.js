@@ -39204,7 +39204,7 @@ var render = function() {
           [
             _c("div", { staticClass: "card-header" }, [
               _vm._v(
-                "\n                 " + _vm._s(thread.title) + "\n            "
+                "\n                " + _vm._s(thread.title) + "\n            "
               )
             ]),
             _vm._v(" "),
