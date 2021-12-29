@@ -24,3 +24,4 @@ Route::put('/tasks/{task}', 'App\Http\Controllers\TaskController@update');
 Route::delete('/tasks/{task}', 'App\Http\Controllers\TaskController@destroy');
 
 Route::get('/thread_index','App\Http\Controllers\ThreadController@index');
+Route::delete('thread_index/{id}', 'App\Http\Controllers\ThreadController@destroy');
