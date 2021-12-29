@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">
                     <footer class="blockquote-footer">{{thread.created_at}}</footer>
-                    <button v-on:click="DeleteThread(thread.id)">削除</button>
+                    <button class="btn btn-primary" v-on:click="DeleteThread(thread.id)">削除</button>
                     </blockquote>
                 </div>
             </div>

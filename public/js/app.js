@@ -39217,6 +39217,7 @@ var render = function() {
                 _c(
                   "button",
                   {
+                    staticClass: "btn btn-primary",
                     on: {
                       click: function($event) {
                         return _vm.DeleteThread(thread.id)
